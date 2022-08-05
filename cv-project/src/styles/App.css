@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,300;1,400&family=Nunito+Sans:wght@200;300;400;700&display=swap');
+
+* {
+    /* colors */
+    --head-bg-color: rgb(49, 86, 104);
+    --bg-color: rgb(208, 207, 207);
+    --title-color: rgb(77, 77, 77);
+    /* fonts */
+    --head-font: 'Montserrat Alternates', sans-serif;
+    --body-font: 'Nunito Sans', sans-serif;
+    /* shadow */
+    --shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+    font-family: var(--body-font);
+}
+
+.header {
+    background-color: var(--head-bg-color);
+    color: var(--bg-color);
+    text-align: center;
+    padding: 16px;
+    font-family: var(--head-font);
+    font-size: 24px;
+    letter-spacing: 2px;
+    box-shadow: var(--shadow);
+}
+
+.general_container,
+.education_container,
+.practical_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.general_title,
+.education_title,
+.practical_title {
+    margin: 16px 10%;
+    font-size: 28px;
+    color: var(--title-color);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    gap: 12px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--title-color);
+}
+
+form > input {
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid var(--title-color);
+    padding-left: 8px;
+}
+
+form > input:focus {
+    outline: 1.5px solid var(--head-bg-color);
+}
+
+/*form > input:invalid {
+    background-color: rgb(199, 173, 173);
+}*/
+
+form > button {
+    width: 92px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid var(--title-color);
+    align-self: flex-end;
+    margin-top: 8px;
+}
+
+form > button:hover {
+    cursor: pointer;
+    background-color: var(--head-bg-color);
+    color: var(--bg-color);
+    transition: 0.5s;
+}
+
+.dates {
+    display: flex;
+    align-items: center;
+    gap: 10%;
+    margin: 16px;
+}
+
+.dates > div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#eFrom, 
+#eUntil, 
+#pFrom,
+#pUntil {
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid var(--title-color);
+}
+
+#eFrom:hover, 
+#eUntil:hover,
+#pFrom:hover, 
+#pUntil:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+    .dates {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+}
