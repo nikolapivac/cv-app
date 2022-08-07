@@ -3,6 +3,7 @@
 * {
     /* colors */
     --head-bg-color: rgb(49, 86, 104);
+    --head-bg-color-light: rgb(49, 86, 104, 0.3);
     --bg-color: rgb(208, 207, 207);
     --title-color: rgb(77, 77, 77);
     /* fonts */
@@ -48,14 +49,20 @@ body {
 form {
     display: flex;
     flex-direction: column;
+}
+ 
+.gformToHide,
+.eformToHide,
+.pformToHide  {
+    display: flex;
+    flex-direction: column;
     width: 60%;
     margin: auto;
     gap: 12px;
     padding-bottom: 24px;
-    border-bottom: 1px solid var(--title-color);
 }
 
-form > input {
+input {
     height: 32px;
     border-radius: 8px;
     border: 1px solid var(--title-color);
@@ -63,7 +70,7 @@ form > input {
     letter-spacing: 1px;
 }
 
-form > input:focus {
+input:focus {
     outline: 1.5px solid var(--head-bg-color);
     box-shadow: var(--shadow);
     transition: 0.5s;
@@ -73,18 +80,30 @@ form > input:focus {
     background-color: rgb(199, 173, 173);
 }*/
 
-form > button {
-    width: 92px;
+button {
+    width: 112px;
     padding: 8px 16px;
     border-radius: 8px;
     border: 1px solid var(--title-color);
-    align-self: flex-end;
     margin-top: 8px;
     letter-spacing: 1px;
     color: var(--title-color);
+    align-self: flex-end;
+    margin-right: 20%;
 }
 
-form > button:hover {
+.previewBtn {
+    margin: 5% 10%;
+    
+}
+
+.gEdit,
+.eAdd,
+.pAdd {
+    display: none;
+}
+
+button:hover {
     cursor: pointer;
     background-color: var(--head-bg-color);
     color: var(--bg-color);
@@ -131,10 +150,70 @@ form > button:hover {
     transition: 0.5s;
 }
 
+.display_container{
+    display: none;
+    background-color: white;
+    margin: 5% 10%;
+    border-radius: 8px;
+    padding: 2% 4%;
+}
+
+.display_general,
+.display_education,
+.display_practical {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--head-bg-color-light);
+}
+
+.display_section_title {
+    font-size: 24px;
+    color: var(--head-bg-color);
+}
+
+.display_general > p {
+    margin: 4px;
+}
+
+.school_card,
+.job_card {
+    background-color: var(--head-bg-color-light);
+    padding: 1% 5%;
+    margin: 8px;
+    border-radius: 16px;
+    border: 1px solid var(--head-bg-color);
+}
+
+.sc_dates,
+.jc_dates {
+    font-size: 12px;
+}
+
+.sc_school,
+.jc_company {
+    font-size: 20px;
+    margin: 0;
+}
+
+.sc_study,
+.jc_position {
+    font-size: 14px;
+    margin: 4px 0;
+}
+
 @media only screen and (max-width: 500px) {
     .dates {
         flex-direction: column;
-        gap: 16px;
-        align-items: flex-start;
+        gap: 8px;
+
+    }
+
+    .dates > div > input {
+        height: 20px;
+    }
+
+    .gformToHide,
+    .eformToHide,
+    .pformToHide {
+        padding-bottom: 0;
     }
 }
